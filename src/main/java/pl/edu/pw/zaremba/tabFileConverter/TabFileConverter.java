@@ -16,7 +16,7 @@ public class TabFileConverter {
     }
 
     public void convert(String directory, double percentage) {
-        fileManager.processDirectory(directory, percentage);
+        fileManager.processDirectory(directory, percentage, true);
     }
 
 

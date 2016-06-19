@@ -19,19 +19,22 @@ public class FileManager {
 
     private final Logger log = LoggerFactory.getLogger(getClass());
 
+    private int sentenceCounter = 0;
+
     public FileManager(TreeMap<Integer, ConfigOption> configuration) {
         this.lineMapping = configuration;
     }
 
 
-    public void processDirectory(String directory, double percentage) {
+    public void processDirectory(String directory, double percentage, boolean singleFile) {
         try {
             Files.walk(Paths.get(directory)).forEach(filePath -> {
                 if (Files.isRegularFile(filePath)) {
                     log.info(filePath.toString());
-                    processFile(filePath.toString(), percentage);
+                    processFile(filePath.toString(), percentage, singleFile);
                 }
             });
+            log.info("TOTAL NUMBER OF SENTENCES : {}", sentenceCounter);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -39,14 +42,23 @@ public class FileManager {
 
 
 
-    private void processFile(String filePath, double percentage) {
+    private void processFile(String filePath, double percentage, boolean singleFile) {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
 
             int trainCount = 0;
             int testCount = 0;
 
-            FileOutputStream fos1 = new FileOutputStream(filePath + "_converted_train");
-            FileOutputStream fos2 = new FileOutputStream(filePath + "_converted_test");
+            FileOutputStream fos1;
+            FileOutputStream fos2;
+
+            if(!singleFile){
+                fos1 = new FileOutputStream(filePath + "_converted_train",true);
+                fos2 = new FileOutputStream(filePath + "_converted_test", true);
+            }else{
+                fos1 = new FileOutputStream( "TRAIN_File", true);
+                fos2 = new FileOutputStream( "TEST_File", true);
+            }
+
 
             BufferedWriter bw1 = new BufferedWriter(new OutputStreamWriter(fos1));
             BufferedWriter bw2 = new BufferedWriter(new OutputStreamWriter(fos2));
@@ -67,6 +79,7 @@ public class FileManager {
                 }
                 if (currentLine.equals("")){
                     counter = (++counter)%10;
+                    sentenceCounter++;
                     if(counter >= border){
                         testCount++;
                     }else{
@@ -95,11 +108,12 @@ public class FileManager {
         for (Integer position : lineMapping.keySet()) {
             ConfigOption option = lineMapping.get(position);
             if (option.isBlank()) {
-                builder.append("-").append("\t");
+                builder.append("_").append("\t");
             } else {
                 builder.append(splittedLine[option.getPosition() - 1]).append("\t");
             }
         }
+        builder.setLength(builder.length() - 1);
         return builder.toString();
     }
 
