@@ -14,7 +14,7 @@ public class ConfigurationLoader {
 //        options.put(1, new ConfigOption(1));
 //        options.put(2, new ConfigOption(1));
 //        options.put(3, new ConfigOption(2));
-//        options.put(4, new ConfigOption(3));      konfiguracja dla Mate
+//        options.put(4, new ConfigOption(3));      //konfiguracja dla Mate
 //        options.put(5, new ConfigOption(3));
 //        options.put(6, new ConfigOption());
 //        options.put(7, new ConfigOption());
@@ -33,7 +33,7 @@ public class ConfigurationLoader {
 //        options.put(2, new ConfigOption(2));
 //        options.put(3, new ConfigOption(3));
 //        options.put(4, new ConfigOption(4));
-//        options.put(5, new ConfigOption(4));      konfiguracja dla ClearNLP
+//        options.put(5, new ConfigOption(4));      //konfiguracja dla ClearNLP
 //        options.put(6, new ConfigOption(6));
 //        options.put(7, new ConfigOption(7));
 //        options.put(8, new ConfigOption(8));
@@ -42,14 +42,25 @@ public class ConfigurationLoader {
 
         options.put(1, new ConfigOption(1));
         options.put(2, new ConfigOption(2));
-        options.put(3, new ConfigOption(3));
-        options.put(4, new ConfigOption());     //konfiguracja dla Malt
-        options.put(5, new ConfigOption(4));
-        options.put(6, new ConfigOption(5));
+        options.put(3, new ConfigOption());
+        options.put(4, new ConfigOption(4));
+        options.put(5, new ConfigOption(4));      //konfiguracja dla Yara
+        options.put(6, new ConfigOption());
         options.put(7, new ConfigOption(6));
         options.put(8, new ConfigOption(7));
         options.put(9, new ConfigOption());
         options.put(10, new ConfigOption());
+
+//        options.put(1, new ConfigOption(1));
+//        options.put(2, new ConfigOption(2));
+//        options.put(3, new ConfigOption(3));
+//        options.put(4, new ConfigOption());     //konfiguracja dla Malt
+//        options.put(5, new ConfigOption(4));
+//        options.put(6, new ConfigOption(5));
+//        options.put(7, new ConfigOption(6));
+//        options.put(8, new ConfigOption(7));
+//        options.put(9, new ConfigOption());
+//        options.put(10, new ConfigOption());
 
         return options;
     }
