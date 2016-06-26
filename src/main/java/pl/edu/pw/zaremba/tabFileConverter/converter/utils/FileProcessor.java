@@ -1,4 +1,4 @@
-package pl.edu.pw.zaremba.tabFileConverter.utils;
+package pl.edu.pw.zaremba.tabFileConverter.converter.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,7 +13,7 @@ import java.util.TreeMap;
  * <p>
  * Created by Mateusz on 2016-04-10.
  */
-public class FileManager {
+public class FileProcessor {
 
     private TreeMap<Integer, ConfigOption> lineMapping;
 
@@ -21,7 +21,7 @@ public class FileManager {
 
     private int sentenceCounter = 0;
 
-    public FileManager(TreeMap<Integer, ConfigOption> configuration) {
+    public FileProcessor(TreeMap<Integer, ConfigOption> configuration) {
         this.lineMapping = configuration;
     }
 

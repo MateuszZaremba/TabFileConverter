@@ -1,4 +1,4 @@
-package pl.edu.pw.zaremba.tabFileConverter.utils;
+package pl.edu.pw.zaremba.tabFileConverter.converter.utils;
 
 /**
  * Created by Mateusz on 2016-04-10.

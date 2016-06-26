@@ -1,4 +1,4 @@
-package pl.edu.pw.zaremba.tabFileConverter.utils;
+package pl.edu.pw.zaremba.tabFileConverter.converter.utils;
 
 import java.util.TreeMap;
 

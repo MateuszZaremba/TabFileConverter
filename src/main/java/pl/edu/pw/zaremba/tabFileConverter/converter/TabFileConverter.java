@@ -1,22 +1,22 @@
-package pl.edu.pw.zaremba.tabFileConverter;
+package pl.edu.pw.zaremba.tabFileConverter.converter;
 
-import pl.edu.pw.zaremba.tabFileConverter.utils.ConfigurationLoader;
-import pl.edu.pw.zaremba.tabFileConverter.utils.FileManager;
+import pl.edu.pw.zaremba.tabFileConverter.converter.utils.ConfigurationLoader;
+import pl.edu.pw.zaremba.tabFileConverter.converter.utils.FileProcessor;
 
 /**
  * Created by Mateusz on 2016-04-10.
  */
 public class TabFileConverter {
 
-    private static FileManager fileManager;
+    private static FileProcessor fileProcessor;
 
     public TabFileConverter() {
         ConfigurationLoader configLoader = new ConfigurationLoader();
-        fileManager = new FileManager(configLoader.loadConfiguration());
+        fileProcessor = new FileProcessor(configLoader.loadConfiguration());
     }
 
     public void convert(String directory, double percentage) {
-        fileManager.processDirectory(directory, percentage, true);
+        fileProcessor.processDirectory(directory, percentage, true);
     }
 
 
