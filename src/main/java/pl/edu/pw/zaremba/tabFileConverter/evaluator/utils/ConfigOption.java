@@ -7,5 +7,15 @@ public class ConfigOption {
 
     private int headPosition;
 
-    private int
+    public ConfigOption(int headPosition) {
+        this.headPosition = headPosition;
+    }
+
+    public int getHeadPosition() {
+        return headPosition;
+    }
+
+    public void setHeadPosition(int headPosition) {
+        this.headPosition = headPosition;
+    }
 }

@@ -1,13 +1,22 @@
 package pl.edu.pw.zaremba.tabFileConverter.evaluator.strategies;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import pl.edu.pw.zaremba.tabFileConverter.evaluator.utils.ConfigOption;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * Unlabeled Attachment Score - how many words have correct head
- *
+ * <p/>
  * Created by Mateusz on 2016-06-25.
  */
 public class UAS_Strategy implements EvaluationStrategy {
+
+    private final Logger log = LoggerFactory.getLogger(getClass());
 
     private int headColumnNumber;
 
@@ -31,7 +40,36 @@ public class UAS_Strategy implements EvaluationStrategy {
      */
     @Override
     public double evaluate(String goldenFilePath, String resultFilePath) {
-        return 0;
+        try (BufferedReader brGolden = new BufferedReader(new FileReader(goldenFilePath));
+             BufferedReader brResult = new BufferedReader(new FileReader(resultFilePath))) {
+            while (brGolden.ready() && brResult.ready()) {
+                String goldenLine = brGolden.readLine();
+                String resultLine = brResult.readLine();
+                if (!goldenLine.equals("") && !resultLine.equals("")) {
+                    int goldenHead = extractHeadFromLine(goldenLine);
+                    int resultHead = extractHeadFromLine(resultLine);
+                    if (resultHead == goldenHead) {
+                        correctEvaluations++;
+                    }
+                    evaluationsMade++;
+                } else {
+                    System.out.println("linia");
+                }
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        log.info("EVALUATIONS MADE  : {}", evaluationsMade);
+        log.info("CORRECT HEADS : {}", correctEvaluations);
+        return ( ((double)correctEvaluations / (double)evaluationsMade)) * 100;
+    }
+
+
+    private int extractHeadFromLine(String line) {
+        String[] splittedLine = line.split("\\t"); //splitted by tabulation
+        return Integer.valueOf(splittedLine[headColumnNumber - 1]);
     }
 
     /**
@@ -39,8 +77,7 @@ public class UAS_Strategy implements EvaluationStrategy {
      */
     @Override
     public void loadConfiguration(ConfigOption options) {
-
+        headColumnNumber = options.getHeadPosition();
     }
-
 
 }
