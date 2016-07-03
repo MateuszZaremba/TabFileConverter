@@ -22,7 +22,7 @@ public class TabFileConverter {
 
     public static void main(String[] args) {
         TabFileConverter fileConverter = new TabFileConverter();
-        fileConverter.convert("resources", 0.95);
+        fileConverter.convert("resources", 1);
     }
 
 }
