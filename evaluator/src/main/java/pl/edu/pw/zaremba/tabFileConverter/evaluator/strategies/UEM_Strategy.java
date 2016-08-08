@@ -1,6 +1,6 @@
 package pl.edu.pw.zaremba.tabFileConverter.evaluator.strategies;
 
-import pl.edu.pw.zaremba.tabFileConverter.evaluator.utils.ConfigOption;
+import pl.edu.pw.zaremba.tabFileConverter.EvaluationConfigOption;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -51,7 +51,7 @@ public class UEM_Strategy extends EvaluationStrategyBase implements EvaluationSt
     }
 
     @Override
-    public void loadConfiguration(ConfigOption options) {
+    public void loadConfiguration(EvaluationConfigOption options) {
         headColumnNumber = options.getHeadPosition();
     }
 }

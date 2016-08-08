@@ -1,4 +1,4 @@
-package pl.edu.pw.zaremba.tabFileConverter.converter.utils;
+package pl.edu.pw.zaremba.tabFileConverter;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -15,13 +15,13 @@ import java.util.TreeMap;
  */
 public class FileProcessor {
 
-    private TreeMap<Integer, ConfigOption> lineMapping;
+    private TreeMap<Integer, ConversionConfigOption> lineMapping;
 
     private final Logger log = LoggerFactory.getLogger(getClass());
 
     private int sentenceCounter = 0;
 
-    public FileProcessor(TreeMap<Integer, ConfigOption> configuration) {
+    public FileProcessor(TreeMap<Integer, ConversionConfigOption> configuration) {
         this.lineMapping = configuration;
     }
 
@@ -104,7 +104,7 @@ public class FileProcessor {
         String[] splittedLine = line.split("\\t"); //splitted by tabulation
         StringBuilder builder = new StringBuilder();
         for (Integer position : lineMapping.keySet()) {
-            ConfigOption option = lineMapping.get(position);
+            ConversionConfigOption option = lineMapping.get(position);
             if (option.isBlank()) {
                 builder.append("_").append("\t");
             } else {

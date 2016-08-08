@@ -1,19 +1,19 @@
-package pl.edu.pw.zaremba.tabFileConverter.evaluator.utils;
+package pl.edu.pw.zaremba.tabFileConverter;
 
 /**
  * Created by Mateusz on 2016-06-25.
  */
-public class ConfigOption {
+public class EvaluationConfigOption {
 
     private int headPosition;
 
     private int labelPosition;
 
-    public ConfigOption(int headPosition) {
+    public EvaluationConfigOption(int headPosition) {
         this.headPosition = headPosition;
     }
 
-    public ConfigOption(int headPosition, int labelPosition) {
+    public EvaluationConfigOption(int headPosition, int labelPosition) {
         this.headPosition = headPosition;
         this.labelPosition = labelPosition;
     }

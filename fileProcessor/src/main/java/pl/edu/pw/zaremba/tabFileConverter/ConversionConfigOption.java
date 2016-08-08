@@ -1,19 +1,19 @@
-package pl.edu.pw.zaremba.tabFileConverter.converter.utils;
+package pl.edu.pw.zaremba.tabFileConverter;
 
 /**
  * Created by Mateusz on 2016-04-10.
  */
-public class ConfigOption {
+public class ConversionConfigOption {
 
     private boolean blank;
 
     private int position;
 
-    public ConfigOption() {
+    public ConversionConfigOption() {
         this.blank = true;
     }
 
-    public ConfigOption(int position){
+    public ConversionConfigOption(int position){
         this.position = position;
     }
 

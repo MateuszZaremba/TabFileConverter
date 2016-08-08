@@ -1,6 +1,7 @@
 package pl.edu.pw.zaremba.tabFileConverter.evaluator.strategies;
 
-import pl.edu.pw.zaremba.tabFileConverter.evaluator.utils.ConfigOption;
+
+import pl.edu.pw.zaremba.tabFileConverter.EvaluationConfigOption;
 
 /**
  * Created by Mateusz on 2016-06-25.
@@ -21,5 +22,5 @@ public interface EvaluationStrategy {
      *
      * @param options to load
      */
-    void loadConfiguration(ConfigOption options);
+    void loadConfiguration(EvaluationConfigOption options);
 }

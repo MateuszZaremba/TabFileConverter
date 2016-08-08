@@ -15,7 +15,6 @@
         <module>fileProcessor</module>
     </modules>
 
-
     <dependencies>
         <dependency>
             <groupId>ch.qos.logback</groupId>

@@ -11,5 +11,13 @@
 
     <artifactId>extractor</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>pl.edu.pw.zaremba</groupId>
+            <artifactId>fileProcessor</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 
 </project>
