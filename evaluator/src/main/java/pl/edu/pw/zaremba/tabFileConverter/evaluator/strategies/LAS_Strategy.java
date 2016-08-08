@@ -3,7 +3,6 @@ package pl.edu.pw.zaremba.tabFileConverter.evaluator.strategies;
 import pl.edu.pw.zaremba.tabFileConverter.evaluator.utils.ConfigOption;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 

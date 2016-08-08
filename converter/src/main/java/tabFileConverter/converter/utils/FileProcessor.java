@@ -1,4 +1,4 @@
-package pl.edu.pw.zaremba.tabFileConverter.converter.utils;
+package tabFileConverter.converter.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
