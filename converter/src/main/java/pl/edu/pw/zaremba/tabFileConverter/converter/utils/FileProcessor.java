@@ -1,7 +1,8 @@
-package pl.edu.pw.zaremba.tabFileConverter;
+package pl.edu.pw.zaremba.tabFileConverter.converter.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import pl.edu.pw.zaremba.tabFileConverter.ConversionConfigOption;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -39,7 +40,6 @@ public class FileProcessor {
             e.printStackTrace();
         }
     }
-
 
 
     private void processFile(String filePath, double percentage, boolean singleFile) {

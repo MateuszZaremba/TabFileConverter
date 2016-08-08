@@ -1,6 +1,6 @@
 package pl.edu.pw.zaremba.tabFileConverter.converter;
 
-import pl.edu.pw.zaremba.tabFileConverter.FileProcessor;
+import pl.edu.pw.zaremba.tabFileConverter.converter.utils.FileProcessor;
 import pl.edu.pw.zaremba.tabFileConverter.converter.utils.ConfigurationLoader;
 
 /**

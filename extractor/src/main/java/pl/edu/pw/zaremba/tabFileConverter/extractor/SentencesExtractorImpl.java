@@ -15,7 +15,7 @@ public class SentencesExtractorImpl implements SentenceExtractor {
     @Override
     public void extractSentences(String sourcePath, String resultFileName, int wordLineNumber) {
         try (BufferedReader brGolden = new BufferedReader(new FileReader(sourcePath))) {
-            FileOutputStream fos1 = new FileOutputStream("SENTENCES_File", true);
+            FileOutputStream fos1 = new FileOutputStream(resultFileName, true);
             BufferedWriter bw1 = new BufferedWriter(new OutputStreamWriter(fos1));
             boolean firstWord = true;
             while (brGolden.ready()) {
