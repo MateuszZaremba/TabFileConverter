@@ -4,6 +4,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
+ * Base class for evaluation strategies.
+ *
  * Created by Mateusz on 2016-06-26.
  */
 public class EvaluationStrategyBase {

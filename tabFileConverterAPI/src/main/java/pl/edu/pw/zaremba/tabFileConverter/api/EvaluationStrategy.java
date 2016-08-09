@@ -1,9 +1,10 @@
-package pl.edu.pw.zaremba.tabFileConverter.evaluator.strategies;
+package pl.edu.pw.zaremba.tabFileConverter.api;
 
 
-import pl.edu.pw.zaremba.tabFileConverter.EvaluationConfigOption;
+import pl.edu.pw.zaremba.tabFileConverter.api.EvaluationConfigOption;
 
 /**
+ * Interface for strategies which evaluate parsing results.
  * Created by Mateusz on 2016-06-25.
  */
 public interface EvaluationStrategy {

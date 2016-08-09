@@ -12,7 +12,7 @@
         <module>evaluator</module>
         <module>converter</module>
         <module>extractor</module>
-        <module>fileProcessor</module>
+        <module>tabFileConverterAPI</module>
     </modules>
 
     <dependencies>

@@ -1,6 +1,8 @@
-package pl.edu.pw.zaremba.tabFileConverter;
+package pl.edu.pw.zaremba.tabFileConverter.api;
 
 /**
+ * Options which represent conversion configuration.
+ *
  * Created by Mateusz on 2016-04-10.
  */
 public class ConversionConfigOption {

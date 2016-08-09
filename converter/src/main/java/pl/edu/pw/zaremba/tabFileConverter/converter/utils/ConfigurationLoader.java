@@ -1,11 +1,12 @@
 package pl.edu.pw.zaremba.tabFileConverter.converter.utils;
 
-import pl.edu.pw.zaremba.tabFileConverter.ConversionConfigOption;
+
+import pl.edu.pw.zaremba.tabFileConverter.api.ConversionConfigOption;
 
 import java.util.TreeMap;
 
 /**
- * Class which loads necesary configuration for converter
+ * Class which loads necesary configuration for TabFileConverter class.
  * <p/>
  * Created by Mateusz on 2016-04-10.
  */

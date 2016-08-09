@@ -1,6 +1,8 @@
-package pl.edu.pw.zaremba.tabFileConverter;
+package pl.edu.pw.zaremba.tabFileConverter.api;
 
 /**
+ * Option which represent evaluation configuration.
+ *
  * Created by Mateusz on 2016-06-25.
  */
 public class EvaluationConfigOption {

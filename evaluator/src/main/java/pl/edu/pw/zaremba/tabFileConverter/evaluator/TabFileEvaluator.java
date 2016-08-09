@@ -1,6 +1,6 @@
 package pl.edu.pw.zaremba.tabFileConverter.evaluator;
 
-import pl.edu.pw.zaremba.tabFileConverter.EvaluationConfigOption;
+import pl.edu.pw.zaremba.tabFileConverter.api.EvaluationConfigOption;
 import pl.edu.pw.zaremba.tabFileConverter.evaluator.strategies.LAS_Strategy;
 import pl.edu.pw.zaremba.tabFileConverter.evaluator.strategies.UAS_Strategy;
 import pl.edu.pw.zaremba.tabFileConverter.evaluator.strategies.UEM_Strategy;
