@@ -2,7 +2,7 @@ package pl.edu.pw.zaremba.tabFileConverter.converter.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.edu.pw.zaremba.tabFileConverter.ConversionConfigOption;
+import pl.edu.pw.zaremba.tabFileConverter.api.ConversionConfigOption;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 import java.util.TreeMap;
 
 /**
- * Class which handles all operations on files
+ * Class which handles all operations on files for TabFileConverter class.
  * <p>
  * Created by Mateusz on 2016-04-10.
  */
@@ -74,10 +74,12 @@ public class FileProcessor {
                     bw2.newLine();
                 }else{
                     currentLine = processLine(br.readLine());
-                    bw1.write(currentLine);
-                    bw1.newLine();
+                    if(currentLine != null){
+                        bw1.write(currentLine);
+                        bw1.newLine();
+                    }
                 }
-                if (currentLine.equals("")){
+                if (currentLine != null && currentLine.equals("")){
                     counter = (++counter)%10;
                     sentenceCounter++;
                     if(counter >= border){
@@ -97,7 +99,7 @@ public class FileProcessor {
     }
 
 
-    private String processLine(String line) {
+    protected String processLine(String line) {
         if (line.isEmpty()) {
             return "";
         }

@@ -6,6 +6,9 @@ import org.slf4j.LoggerFactory;
 import java.io.*;
 
 /**
+ * Class which handles extraction of sentences from tab separated files.
+ * It returns file whith each sentence in separated line.
+ *
  * Created by Mateusz on 2016-06-27.
  */
 public class SentencesExtractorImpl implements SentenceExtractor {
@@ -26,6 +29,7 @@ public class SentencesExtractorImpl implements SentenceExtractor {
                         firstWord = false;
                     }
                     String word = extractWordFromLine(line, wordLineNumber);
+                    word += " ";
                     bw1.write(word);
                 } else {
                     bw1.newLine();

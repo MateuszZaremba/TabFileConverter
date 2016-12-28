@@ -1,7 +1,8 @@
 package pl.edu.pw.zaremba.tabFileConverter.evaluator.strategies;
 
 
-import pl.edu.pw.zaremba.tabFileConverter.EvaluationConfigOption;
+import pl.edu.pw.zaremba.tabFileConverter.api.EvaluationConfigOption;
+import pl.edu.pw.zaremba.tabFileConverter.api.EvaluationStrategy;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
