@@ -74,10 +74,12 @@ public class FileProcessor {
                     bw2.newLine();
                 }else{
                     currentLine = processLine(br.readLine());
-                    bw1.write(currentLine);
-                    bw1.newLine();
+                    if(currentLine != null){
+                        bw1.write(currentLine);
+                        bw1.newLine();
+                    }
                 }
-                if (currentLine.equals("")){
+                if (currentLine != null && currentLine.equals("")){
                     counter = (++counter)%10;
                     sentenceCounter++;
                     if(counter >= border){
@@ -97,7 +99,7 @@ public class FileProcessor {
     }
 
 
-    private String processLine(String line) {
+    protected String processLine(String line) {
         if (line.isEmpty()) {
             return "";
         }

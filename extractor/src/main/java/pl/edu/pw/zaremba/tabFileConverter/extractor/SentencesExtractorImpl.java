@@ -29,6 +29,7 @@ public class SentencesExtractorImpl implements SentenceExtractor {
                         firstWord = false;
                     }
                     String word = extractWordFromLine(line, wordLineNumber);
+                    word += " ";
                     bw1.write(word);
                 } else {
                     bw1.newLine();
