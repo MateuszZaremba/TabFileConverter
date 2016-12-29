@@ -11,8 +11,6 @@ import java.util.TreeMap;
 
 /**
  * Class which handles all operations on files for TabFileConverter class.
- * <p>
- * Created by Mateusz on 2016-04-10.
  */
 public class FileProcessor {
 
@@ -51,12 +49,12 @@ public class FileProcessor {
             FileOutputStream fos1;
             FileOutputStream fos2;
 
-            if(!singleFile){
-                fos1 = new FileOutputStream(filePath + "_converted_train",true);
+            if (!singleFile) {
+                fos1 = new FileOutputStream(filePath + "_converted_train", true);
                 fos2 = new FileOutputStream(filePath + "_converted_test", true);
-            }else{
-                fos1 = new FileOutputStream( "TRAIN_File", true);
-                fos2 = new FileOutputStream( "TEST_File", true);
+            } else {
+                fos1 = new FileOutputStream("TRAIN_File", true);
+                fos2 = new FileOutputStream("TEST_File", true);
             }
 
 
@@ -64,27 +62,27 @@ public class FileProcessor {
             BufferedWriter bw2 = new BufferedWriter(new OutputStreamWriter(fos2));
 
             String currentLine;
-            int border = (int)(10 * percentage);
+            int border = (int) (10 * percentage);
             int counter = 1;
 
             while (br.ready()) {
-                if(counter >= border){
+                if (counter >= border) {
                     currentLine = processLine(br.readLine());
                     bw2.write(currentLine);
                     bw2.newLine();
-                }else{
+                } else {
                     currentLine = processLine(br.readLine());
-                    if(currentLine != null){
+                    if (currentLine != null) {
                         bw1.write(currentLine);
                         bw1.newLine();
                     }
                 }
-                if (currentLine != null && currentLine.equals("")){
-                    counter = (++counter)%10;
+                if (currentLine != null && currentLine.equals("")) {
+                    counter = (++counter) % 10;
                     sentenceCounter++;
-                    if(counter >= border){
+                    if (counter >= border) {
                         testCount++;
-                    }else{
+                    } else {
                         trainCount++;
                     }
                 }
