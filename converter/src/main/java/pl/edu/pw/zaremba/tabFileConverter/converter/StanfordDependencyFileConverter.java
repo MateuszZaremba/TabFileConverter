@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Mateusz on 2016-12-18.
+ * Class which handles conversion of Stanford typed dependency files into CoNLL files.
  */
 public class StanfordDependencyFileConverter extends FileProcessor {
 
@@ -18,9 +18,15 @@ public class StanfordDependencyFileConverter extends FileProcessor {
     }
 
     public static void main(String[] args) {
-        StanfordDependencyFileConverter converter = new StanfordDependencyFileConverter();
-        converter.processDirectory("resources", 1, true);
+        if (args.length != 1) {
+            System.out.println("Należy podać nazwę katalogu z plikami do konwersji.");
+        } else {
+            String resourceCatalogName = args[0];
+            StanfordDependencyFileConverter converter = new StanfordDependencyFileConverter();
+            converter.processDirectory(resourceCatalogName, 1, true);
+        }
     }
+
 
     @Override
     protected String processLine(String line) {
@@ -51,7 +57,7 @@ public class StanfordDependencyFileConverter extends FileProcessor {
                     i--;
                 }
                 for (int k = i + 1; k < j; k++) {
-                    if(chars[k] != ','){
+                    if (chars[k] != ',') {
                         head += chars[k];
                     }
                 }
@@ -62,21 +68,21 @@ public class StanfordDependencyFileConverter extends FileProcessor {
         while (chars[i] != '-') {
             i--;
         }
-        int k = i+1;
+        int k = i + 1;
         int j = i;
-        while(chars[k] != ')'){
+        while (chars[k] != ')') {
             id += chars[k];
             k++;
         }
-        int l = j+1;
-        while(chars[l] != ' '){
+        int l = j + 1;
+        while (chars[l] != ' ') {
             l--;
         }
-        while(l != j){
+        while (l != j) {
             noun += chars[l];
             l++;
         }
-            StringBuilder builder = new StringBuilder();
+        StringBuilder builder = new StringBuilder();
 
 
         builder.append(id)
